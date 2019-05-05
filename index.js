@@ -36,11 +36,13 @@ client.on('ready', () => {
             console.log(message.member.id)
             if(message.member.id === '313260766147117056'){
                 simpleEmbed(':arrows_counterclockwise: Rebooting')
-                .then(()=>client.destroy())
-                .then(() =>client.login('Token-Here'))
+                client.destroy()
+                .then(() =>client.login('Token-here'))
                 .then(()=> simpleEmbed('Reboot Successful!'))
             }
+            else{
             return simpleEmbed(':no_entry_sign: You Do Not Have Permission To Use This Command')
+            }
             break;
             case 'help':
                 message.author.send("Your message here.")
@@ -59,4 +61,4 @@ client.on('ready', () => {
 
 
 
-client.login('Token-Here')
+client.login('Token-here')
